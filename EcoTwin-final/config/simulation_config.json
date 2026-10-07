@@ -1,0 +1,114 @@
+{
+  "project": {
+    "name": "EcoTwin",
+    "version": "0.1"
+  },
+
+  "city": {
+    "grid": {
+      "rows": 5,
+      "columns": 5,
+      "cell_size_m": 100
+    },
+    "intersection_count": 25,
+    "coordinate_system": "x_y",
+    "distance_unit": "meters"
+  },
+
+  "simulation": {
+    "timestep_seconds": 1,
+    "duration_seconds": 3600,
+    "seed": 42
+  },
+
+  "vehicles": {
+    "types": [
+      "car",
+      "bus",
+      "truck"
+    ],
+    "max_speed_mps": 13.9,
+    "vehicle_id_format": "veh_{id:04d}"
+  },
+
+  "roads": {
+    "road_id_format": "road_{id:04d}",
+    "lanes_per_direction": 1,
+    "speed_limit_mps": 13.9
+  },
+
+  "traffic_lights": {
+    "traffic_light_id_format": "tls_{id:04d}",
+
+    "phases": {
+      "green_ns": 0,
+      "green_ew": 1
+    },
+
+    "min_green_seconds": 10,
+    "max_green_seconds": 60,
+    "yellow_seconds": 3
+  },
+
+  "traffic_demand": {
+    "vehicles_per_hour": 600,
+    "route_id_format": "route_{id:04d}",
+    "random_seed": 42
+  },
+
+  "observations": {
+    "variables": [
+      "queue_length",
+      "waiting_time",
+      "average_speed",
+      "co2_emission",
+      "current_phase",
+      "phase_elapsed_time"
+    ]
+  },
+
+  "actions": {
+    "type": "discrete",
+    "values": [
+      "keep_phase",
+      "switch_phase"
+    ]
+  },
+
+  "reward": {
+    "waiting_time_weight": 0.5,
+    "co2_weight": 0.3,
+    "queue_length_weight": 0.2,
+    "normalize": true
+  },
+
+  "metrics": {
+    "primary": [
+      "total_waiting_time",
+      "total_co2_emission"
+    ],
+    "secondary": [
+      "average_speed",
+      "average_queue_length",
+      "traffic_throughput"
+    ]
+  },
+
+  "rl": {
+    "algorithm": "PPO",
+    "framework": "PyTorch",
+    "library": "Ray RLlib",
+    "environment": "Gymnasium"
+  },
+
+  "communication": {
+    "sumo_interface": "TraCI"
+  },
+
+  "output": {
+    "format": "json",
+    "vehicle_data": true,
+    "traffic_light_data": true,
+    "emission_data": true
+  }
+}

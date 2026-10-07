@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+
+<vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="13.9"/>
+<vType id="bus" accel="1.2" decel="4.0" sigma="0.5" length="12" minGap="2.5" maxSpeed="13.9"/>
+<vType id="truck" accel="1.0" decel="4.0" sigma="0.5" length="12" minGap="2.5" maxSpeed="13.9"/>
+
+<route id="east_route" edges="E0 E2 E4 E6"/>
+<route id="west_route" edges="E7 E5 E3 E1"/>
+<route id="south_route" edges="E40 E42 E44 E46"/>
+<route id="north_route" edges="E47 E45 E43 E41"/>
+<route id="east_row_1" edges="E8 E10 E12 E14"/>
+<route id="west_row_1" edges="E15 E13 E11 E9"/>
+<route id="east_row_2" edges="E16 E18 E20 E22"/>
+<route id="west_row_2" edges="E23 E21 E19 E17"/>
+<route id="east_row_3" edges="E24 E26 E28 E30"/>
+<route id="west_row_3" edges="E31 E29 E27 E25"/>
+<route id="east_row_4" edges="E32 E34 E36 E38"/>
+<route id="west_row_4" edges="E39 E37 E35 E33"/>
+<route id="south_column_1" edges="E48 E50 E52 E54"/>
+<route id="north_column_1" edges="E55 E53 E51 E49"/>
+<route id="south_column_2" edges="E56 E58 E60 E62"/>
+<route id="north_column_2" edges="E63 E61 E59 E57"/>
+<route id="south_column_3" edges="E64 E66 E68 E70"/>
+<route id="north_column_3" edges="E71 E69 E67 E65"/>
+<route id="south_column_4" edges="E72 E74 E76 E78"/>
+<route id="north_column_4" edges="E79 E77 E75 E73"/>
+
+<flow id="flow_east_route" type="truck" route="east_route" begin="0" end="3600" period="60" departLane="best"/>
+<flow id="flow_west_route" type="car" route="west_route" begin="3" end="3600" period="60" departLane="best"/>
+<flow id="flow_south_route" type="car" route="south_route" begin="6" end="3600" period="60" departLane="best"/>
+<flow id="flow_north_route" type="bus" route="north_route" begin="9" end="3600" period="60" departLane="best"/>
+<flow id="flow_east_row_1" type="car" route="east_row_1" begin="12" end="3600" period="60" departLane="best"/>
+<flow id="flow_west_row_1" type="bus" route="west_row_1" begin="15" end="3600" period="60" departLane="best"/>
+<flow id="flow_east_row_2" type="truck" route="east_row_2" begin="18" end="3600" period="60" departLane="best"/>
+<flow id="flow_west_row_2" type="car" route="west_row_2" begin="21" end="3600" period="60" departLane="best"/>
+<flow id="flow_east_row_3" type="bus" route="east_row_3" begin="24" end="3600" period="60" departLane="best"/>
+<flow id="flow_west_row_3" type="car" route="west_row_3" begin="27" end="3600" period="60" departLane="best"/>
+<flow id="flow_east_row_4" type="truck" route="east_row_4" begin="30" end="3600" period="60" departLane="best"/>
+<flow id="flow_west_row_4" type="car" route="west_row_4" begin="33" end="3600" period="60" departLane="best"/>
+<flow id="flow_south_column_1" type="bus" route="south_column_1" begin="36" end="3600" period="60" departLane="best"/>
+<flow id="flow_north_column_1" type="car" route="north_column_1" begin="39" end="3600" period="60" departLane="best"/>
+<flow id="flow_south_column_2" type="truck" route="south_column_2" begin="42" end="3600" period="60" departLane="best"/>
+<flow id="flow_north_column_2" type="car" route="north_column_2" begin="45" end="3600" period="60" departLane="best"/>
+<flow id="flow_south_column_3" type="bus" route="south_column_3" begin="48" end="3600" period="60" departLane="best"/>
+<flow id="flow_north_column_3" type="car" route="north_column_3" begin="51" end="3600" period="60" departLane="best"/>
+<flow id="flow_south_column_4" type="truck" route="south_column_4" begin="54" end="3600" period="60" departLane="best"/>
+<flow id="flow_north_column_4" type="car" route="north_column_4" begin="57" end="3600" period="60" departLane="best"/>
+
+
+</routes>

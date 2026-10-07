@@ -1,0 +1,24 @@
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: ecotwin-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - SUMO_HOME=/usr/share/sumo
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: ecotwin-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
